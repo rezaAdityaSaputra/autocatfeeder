@@ -80,7 +80,7 @@ export default function CountdownTimer() {
       <h2 className="text-xl font-semibold text-black opacity-60 mb-2">
         Waktu Menuju Pemberian Makan Berikutnya
       </h2>
-      <div className="text-2xl text-black opacity-60 font-bold">
+      <div className="text-2xl text-[#03108a] opacity-60 font-bold">
         {timeLeft.hours.toString().padStart(2, '0')}
         <span className="text-sm"> Jam </span>
         {timeLeft.minutes.toString().padStart(2, '0')}
@@ -91,7 +91,7 @@ export default function CountdownTimer() {
       <p className="text-black opacity-60 mt-2">
         Pemberian makan berikutnya: <strong>{nextFeedTime}</strong>
       </p>
-      <div className="h-2 bg-green-500 mt-2 rounded"></div>
+      <div className="h-2 bg-[#3B82F6] mt-2 rounded"></div>
     </div>
   )
 }

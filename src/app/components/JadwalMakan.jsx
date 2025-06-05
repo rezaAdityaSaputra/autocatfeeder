@@ -1,13 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createBrowserClient } from '@supabase/ssr'
-
-// Inisialisasi supabase client (untuk komponen client)
-const supabase = createBrowserClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-)
+import { supabase } from '@/lib/supabaseClient'
 
 export default function JadwalMakanModal({ onClose }) {
   const [jadwal, setJadwal] = useState([])
@@ -75,14 +69,13 @@ export default function JadwalMakanModal({ onClose }) {
       <div className="flex gap-2 justify-between">
         <input
           type="time"
-          placeholder="Waktu"
           value={form.waktu}
           onChange={(e) => setForm({ ...form, waktu: e.target.value })}
           className="border rounded px-2 py-1 flex-1 text-black"
         />
         <button
           onClick={handleSubmit}
-          className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded"
+          className="bg-[#0657d6] hover:bg-[#041c6b] text-white px-4 py-1 rounded"
         >
           {editingId ? 'Update' : 'Tambah'}
         </button>
@@ -107,13 +100,13 @@ export default function JadwalMakanModal({ onClose }) {
                 <div className="flex justify-center gap-2">
                   <button
                     onClick={() => handleEdit(item)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-white px-2 py-1 rounded"
+                    className="bg-[#3B82F6] hover:bg-[#041c6b] text-white px-2 py-1 rounded"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(item.id)}
-                    className="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded"
+                    className="bg-[#ef4444] hover:bg-[#870505] text-white px-2 py-1 rounded"
                   >
                     Hapus
                   </button>
@@ -128,7 +121,7 @@ export default function JadwalMakanModal({ onClose }) {
         <div className="flex justify-end">
           <button
             onClick={onClose}
-            className="bg-red-600 hover:bg-red-600 text-white px-4 py-1 rounded mt-2"
+            className="bg-[#ef4444] hover:bg-[#870505] text-white px-4 py-1 rounded mt-2"
           >
             Tutup
           </button>

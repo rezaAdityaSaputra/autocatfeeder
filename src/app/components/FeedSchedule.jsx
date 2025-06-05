@@ -30,7 +30,7 @@ export default function FeedSchedule() {
     const nowTime = getCurrentTimeWIB()
 
     const updatedTimes = data.map((item) => {
-      const waktuHHMM = item.waktu.slice(0, 5) // jika format waktu 'HH:mm:ss'
+      const waktuHHMM = item.waktu.slice(0, 5) 
       return {
         time: waktuHHMM,
         status: waktuHHMM < nowTime ? 'Selesai' : 'Belum',
@@ -68,12 +68,12 @@ export default function FeedSchedule() {
   return (
     <div className="bg-white p-4 rounded shadow relative">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-xl font-semibold text-black opacity-60">
+        <h2 className="text-xl font-semibold text-black  opacity-60">
           Jam Pemberian Makan Hari Ini
         </h2>
         <button
           onClick={() => setIsEditOpen(true)}
-          className="text-white bg-blue-600 px-3 py-1 rounded hover:bg-blue-100 text-black"
+          className="text-white bg-blue-600 px-3 py-1 rounded hover:bg-[#041c6b] text-black"
         >
           Edit Jadwal
         </button>
@@ -85,13 +85,13 @@ export default function FeedSchedule() {
             <span className="flex text-black opacity-60 items-center gap-2">
               <span
                 className={`h-3 w-3 rounded-full ${
-                  item.status === 'Selesai' ? 'bg-green-500' : 'bg-gray-400'
+                  item.status === 'Selesai' ? 'bg-[#3B82F6]' : 'bg-gray-400'
                 }`}
               ></span>
               <span className="font-medium">{item.time}</span>
             </span>
             <span
-              className={item.status === 'Selesai' ? 'text-green-500' : 'text-gray-500'}
+              className={item.status === 'Selesai' ? 'text-[#3B82F6]' : 'text-gray-500'}
             >
               {item.status}
             </span>
@@ -101,9 +101,7 @@ export default function FeedSchedule() {
 
       {isEditOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white p-0 rounded-lg shadow-lg max-w-4xl w-full relative">
             <JadwalMakanModal onClose={() => setIsEditOpen(false)} />
-          </div>
         </div>
       )}
     </div>

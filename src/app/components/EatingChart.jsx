@@ -49,7 +49,7 @@ export default function DetectionChart() {
   return (
     <div className="bg-white p-4 rounded shadow">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-xl text-black opacity-60 font-semibold">
+        <h2 className="text-xl text-black  opacity-60 font-semibold">
           Statistik Kucing Terdeteksi Makan per Jam
         </h2>
         
@@ -62,7 +62,7 @@ export default function DetectionChart() {
           <Line
             type="monotone"
             dataKey="value"
-            stroke="#0ea5e9"
+            stroke="#3B82F6"
             strokeWidth={3}
           />
         </LineChart>

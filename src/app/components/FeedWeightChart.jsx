@@ -66,7 +66,7 @@ export default function EatingChart() {
           <Line
             type="monotone"
             dataKey="value"
-            stroke="#0ea5e9"
+            stroke="#3B82F6"
             strokeWidth={3}
           />
         </LineChart>

@@ -8,7 +8,7 @@ export default function ManualFeed() {
   const [message, setMessage] = useState("");
   const [cooldown, setCooldown] = useState(false);
 
-  const timerRef = useRef(null); // no TS type annotation
+  const timerRef = useRef(null); 
 
   const handleFeedClick = async () => {
     if (cooldown) {
@@ -51,7 +51,7 @@ export default function ManualFeed() {
         onClick={handleFeedClick}
         disabled={loading || cooldown}
         className={`${
-          loading || cooldown ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"
+          loading || cooldown ? "bg-gray-400" : "bg-[#0657d6] hover:bg-[#041c6b] "
         } text-xl text-white px-4 py-2 rounded transition`}
       >
         {loading ? "Mengirim..." : "Beri Makan Sekarang"}
