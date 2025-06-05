@@ -1,9 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 
-const supabase = createClientComponentClient()
+// Inisialisasi supabase client (untuk komponen client)
+const supabase = createBrowserClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
 export default function JadwalMakanModal({ onClose }) {
   const [jadwal, setJadwal] = useState([])
@@ -86,10 +90,10 @@ export default function JadwalMakanModal({ onClose }) {
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
-      <table className="w-full border  border-gray-300 text-sm">
+      <table className="w-full border border-gray-300 text-sm">
         <thead>
           <tr className="bg-blue text-white">
-            <th className="border text-black px-2 py-1 text-center  ">ID</th>
+            <th className="border text-black px-2 py-1 text-center">ID</th>
             <th className="border text-black px-2 py-1 text-center">Waktu</th>
             <th className="border text-black px-2 py-1 text-center">Aksi</th>
           </tr>

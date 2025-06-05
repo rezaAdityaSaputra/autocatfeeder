@@ -3,7 +3,7 @@ import EatingChart from "./components/EatingChart";
 import FeedSchedule from "./components/FeedSchedule";
 import CountdownTimer from "./components/CountdownTimer";
 import ManualFeed from "./components/ButtonFeed";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
