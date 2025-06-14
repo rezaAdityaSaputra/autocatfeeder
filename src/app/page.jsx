@@ -3,6 +3,7 @@ import EatingChart from "./components/EatingChart";
 import FeedSchedule from "./components/FeedSchedule";
 import CountdownTimer from "./components/CountdownTimer";
 import ManualFeed from "./components/ButtonFeed";
+import FeedWeight from "./components/Feedweight";
 
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
     <header className="bg-[#0547b0] text-white p-4 text-center text-2xl font-bold rounded">
       AutoCatFeeder
     </header>{" "}
-    <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
       <FeedWeightChart />
       {/* <EatingChart /> */}
+      <FeedWeight/>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
       <FeedSchedule />
