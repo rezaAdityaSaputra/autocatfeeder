@@ -13,7 +13,7 @@ export default function PakanBeratUpdater() {
     const { data, error } = await supabase
       .from("statistik-berat-pakan")
       .select("berat, waktu")
-      .order("waktu", { ascending: false })
+      .order("timestamp", { ascending: false })
       .limit(1)
       .single();
 
